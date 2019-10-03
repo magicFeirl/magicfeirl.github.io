@@ -1,99 +1,120 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>
-			JavaScript测试
-		</title>
-		
-		<meta charset="utf-8"></meta>
-		
+		<meta charset="utf-8"></meta>	
+		<link href="css/main.css" rel="stylesheet">
 		<script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
-		<script type="text/javascript">
-			$(document).ready(
-				function(){
-					append("那明天呢？神社倒闭之日！kora！啊~你俩的关系真好呢（棒读）啊一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个一个","2019年8月10日22:27:25");
-					append("巨大js多添加","2019年8月10日22:44:46");append("巨大js多添加","2019年8月10日22:44:46");
-					append("巨大js多添加","2019年8月10日22:44:46");append("呜哇累死我了，，，洗澡睡觉","2019年8月10日23:05:11");
-					append("熬夜我草你妈，你把多少人的人生，都他妈毁了！","2019年8月10日23:06:28");
-				}
-			);
-			
-			function append(cont,time)
-			{	
-				var node = "<li class=\"cont\"><div><p>"+cont
-				+"</p><span>"
-				+time+"</span><div class=\"hide\">隐藏此条</div></div></li>";
-				
-				$("ul").append(node);
-				$(".hide").last().click(function(){ //添加多个包含相同类的元素时，注意绑定事件须为最后一个添加的元素！
-					var parent = $(this).parent("div");
-					$(parent).hide("fast",function(){
-						$(this).parent("li").append("<p class=\"show\">显示此条</p>");
-						$(".show").click(function(){
-							$(this).prev().show("fast");
-							$(this).remove();
-						});
-					});
-				});
-					
-			}
-		</script>
-		
-		<style type="text/css">
-			body{
-					padding:0;
-					margin:0;
-					background-image:url(img/homu.jpg);
-					background-repeat:no-repeat;
-					background-attachment:fixed;
-			}
-			
-			#div1{
-				margin:1% 20%;
-				color:black;
-				padding:20px;
-				text-align:left;
-			}
-			
-			li{
-				list-style:none;
-			}
-			
-			li span{
-				color:gray;
-				font-style:oblique;
-			}
-
-			.cont{
-				background-color:rgba(255,255,255,0.5);
-				padding:15px;
-				margin:5px;
-			}
-			
-			.hide,.show{
-				float:right;
-				color:gray;
-				font-weight:bold;
-			}
-			
-			.show{
-				float:none;
-				text-align:center;
-				margin:-10px;
-			}
-			
-			.hide:hover,
-			li span:hover,
-			.show:hover
-			{
-				color:black;
-			}
-		</style>
+		<script type="text/javascript" src="js/main.js"></script>
+		<title>你好，世界</title>
 	</head>
 	<body>
-		<div id="div1">
-			<ul id="ul">
+		<div class="d1 mg">
+			<ul>
+				<li><a href="http://music.163.com/song?id=5182746&userid=360941693" target="_blank"><h1 style="text-align:left">Somewhere, over the rainbow...</h1></a></li>
+				
+				<li>
+					<div class="content">
+						<p>
+							<!--自我出道-->
+							来自魔理沙桑的惊爆礼物哒！（唐突）：
+							<a href="https://space.bilibili.com/183454954" target="_blank">(≧ω≦)/☆</a>
+						</p>
+						
+						<span class="time">时间：8.10</span>
+					</div>
+				</li>
+				
+				<li>
+					<div class="content">
+						<p>
+							更新日志：
+						</p>
+						<p>
+							布局优化、界面微调、加入时间块；
+							<br/>
+							<span style="text-decoration:line-through;">面向搜索引擎编程</span>
+							<br/>
+							将来或许会添加js自动更新内容功能，拭目以待。（根本就没人看好吧（爆笑））
+						</p>
+						<span class="time">时间：2019年8月10日20:25:22</span>
+					</div>
+				</li>
+			
+				<li>
+						<div class="content">
+							<p>
+								好久不见，国庆快乐。
+							</p>
+							<p>
+								撸了个云解析(时效一年），现在gitpages 可以通过<a href="https://codingnoob.xyz">codingnoob</a>访问了。
+							</p>
+							<p>
+								长路漫漫，学海无涯。新加的用js生成留言块的网页会在不久的将来补上，SRDB~~
+							</p>
+							<span class="time">时间：2019年10月2日23:41:50</span>
+						</div>
+				</li>
+			
+				<li>
+					<div class="content">
+						<p>野兽之日！个人页初写成！</p>
+						<p>借助<a href="https://www.w3school.com.cn/index.html" target="_blank">w3school</a>和Notepad++，网页终于完成daze☆</p>
+						<p><span class="bolderTxt">活着</span>就该做些有趣的事呢（自言自语）</p>
+						<span class="time">时间：8.10</span>
+					</div>
+				</li>
+				
+				<li>
+					<div class="content">
+						<p>
+							那么，明天呢？
+						</p>
+						
+						<p>神社倒闭之日！</p>
+						<span class="time">时间：8.10</span>
+					</div>
+				</li>
+				
+				<li>
+					<div class="content">
+						<p>
+							热恋中的少女的力量真是了不起呢。
+						</p>
+						<span class="time">时间：8.10</span>
+					</div>
+				</li>
+				
+				<li>
+					<div class="content">
+						<p>
+							那么诸君，再见啦！（辞世之言）
+						</p>
+						<span class="time">时间：8.10</span>
+					</div>
+				</li>
+				
+				<li>
+					<div class="content">
+						<p>
+							<span>好了，该上传git了</span>
+							<p>结束时间：2019年8月10日15:57:46</p>
+						</p>
+						<span class="time">时间：8.10</span>
+					</div>
+				</li>
+				
 			</ul>
+		</div>
+		
+		
+		<div class="foot mg">
+			<p>
+				<a href="#"  class="text">回到顶部</a>
+				<span class="text"> || </span>
+				<a href="https://e-shuushuu.net/image/916423/" target="_blank" class="text">背景图</a>
+			</p>
+			
+			<p  class="text">2019/8/10 Edit with Notepad++</p>
 		</div>
 	</body>
 </html>
