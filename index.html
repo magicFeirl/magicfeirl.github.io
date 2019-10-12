@@ -1,119 +1,30 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>
-			Hello World
-		</title>
-		
-		<meta charset="utf-8"></meta>
-		
-		<script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
-		<script type="text/javascript">
-			$(document).ready(
-				<!-- 在此处添加留言块： -->
-				function(){
-					append("那么诸君，再见啦~","2019年10月3日23:13:24");
-					append("好久不见，国庆持续摸鱼中...","2019年10月3日23:02:56");
-					append("将主页替换为由js生成留言块的当前页","2019年10月3日23:03:58");
-					append("那明天呢？神社倒闭之日","2019年8月10日22:27:25");
-					<!-- append("巨大js多添加","2019年8月10日22:44:46"); -->
-					<!-- append("巨大js多添加","2019年8月10日22:44:46"); -->
-					<!-- append("巨大js多添加","2019年8月10日22:44:46"); -->
-					append("呜哇累死我了，，，洗澡睡觉","2019年8月10日23:05:11");
-					append("熬夜我草你妈，你把多少人的人生，都他妈毁了！","2019年8月10日23:06:28");
-				}
-			);
-			
-			function append(cont,time)
-			{	
-				var node = "<li class=\"cont\"><div><p>"+cont
-				+"</p><span>"
-				+time+"</span><div class=\"hide\">隐藏此条</div></div></li>";
-				
-				$("ul").append(node);
-				$(".hide").last().click(function(){ //添加多个包含相同类的元素时，注意绑定事件须为最后一个添加的元素！
-					var parent = $(this).parent("div");
-					$(parent).hide("fast",function(){
-						$(this).parent("li").append("<p class=\"show\">显示此条</p>");
-						$(".show").click(function(){
-							$(this).prev().show("fast");
-							$(this).remove();
-						});
-					});
-				});
-					
-			}
-		</script>
-		
-		<style type="text/css">
-			body{
-					padding:0;
-					margin:0;
-					background-image:url(img/homu.jpg);
-					background-repeat:no-repeat;
-					background-attachment:fixed;
-			}
-			
-			#div1,#foot{
-				margin:1% 20%;
-				color:black;
-				padding:20px;
-				text-align:left;
-			}
-			
-			li{
-				list-style:none;
-			}
-			
-			li span{
-				color:gray;
-				font-style:oblique;
-			}
+	<wrapper>
+		<meta charset="utf-8" />
+		<title>Hello world</title>
 
-			.cont{
-				background-color:rgba(255,255,255,0.5);
-				padding:15px;
-				margin:5px;
-			}
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<script src="https://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/main.js">
 			
-			.hide,.show{
-				float:right;
-				color:gray;
-				font-weight:bold;
-			}
-			
-			.show{
-				float:none;
-				text-align:center;
-				margin:-10px;
-			}
-			
-			.hide:hover,
-			li span:hover,
-			.show:hover
-			{
-				color:black;
-			}
-			
-			#foot{
-				text-align:center;
-			}
-			
-			a:hover{
-				color:red;
-			}
-			
-			a{
-				color:rgba(255,255,255,0.3);
-				font-weight:bold;
-			}
-		</style>
-	</head>
+		</script>
+	</wrapper>
+
 	<body>
-		<div id="div1">
-			<ul id="ul">
+		<div id="wrapper">
+			<ul id="menu">
+				<li><a href="#">首页</a></li>
+				<li><a href="#">笔记</a></li>
+				<li><a href="#">记录</a></li>
+				<li><a href="#">Github</a></li>
 			</ul>
-			<div id="foot"><a href="https://codingnoob.xyz/append.html">旧页面</a></div>
-		</div>
+			<hr>
+			
+			<div id="body">
+				<ul id="content">
+				</ul>
+			</div>
+		</div>	
 	</body>
 </html>
