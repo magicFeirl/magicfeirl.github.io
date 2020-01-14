@@ -1,29 +1,73 @@
-function append(content,time){
-var node = "<li>"+content+"</li>"+"<div class=\"time\">"+time+"<hr></div>";
-	$('#content').append(node);
+window.onload = load;
+
+function load() {
+    div_wrapper = document.querySelector('#wrapper');
+
+    addBox('就这？','2020-1-14 17:57:32',
+        '就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？就这？');
+
+    addBox();addBox();addBox();addBox();addBox();
 }
 
-$(document).ready(function(){
-	
-	//*********************在此范围内添加留言块*********************
-	//添加的内容的顺序由append函数执行的顺序决定
-	
-	append("<i><b>无技术内容，记录的都是些无关紧要的东西，这就是我的个人页</b></i>","置顶(2019年10月12日22:50:09)");
-	
-	
-	append("又是一个无聊的周末，连想给自己找事做的动力都没有；当懒狗看清自己的本质后，懒狗也不会做出任何改变，<i>I feel defect and guilty.</i>","2019年10月12日22:58:17");
-	
-	append("使用jQuery生成留言块，这也是目前个人页最重要的部分，关于H5的部分用的不多，但相比之前还是有点进步的w。","2019年10月12日22:43:39");
-	
-	append("个人页目前还十分简陋，也不太可能进行完善了。前端相关知识暂且没有继续学习，目前更加侧重文化，高数英语什么的就有的搞了。关于自己的自制力自己还是非常清楚的，可能到头来会落得个两头空吧（笑）。","2019年10月12日22:40:21");
-	
-	append("由于分类不当找不到以前的主页面文件了，所以将主页替换成当前页了。<br>留言块的生成在js文件下，特此提醒w。","2019年10月12日22:38:04");
-	
-	append("一转眼国庆假期就要结束了，带回来的课本一本没看...学如逆水行舟，不进则退。","2019年10月6日14:45:43");
-	
-	append("有创造性的工作才是最难的工作，深刻的灵感不足，当然技术力缺乏也是一个因素。<br>如何获得灵感暂且不谈，技术力这方面可以通过练习提升，这也是我现在在做的。<br>当然目前最严重的问题是缺乏目标，或许也是因为如此，有点“病急乱投医”的感觉，越学越迷茫，越学越糊涂。<br><br>\"学这个有用吗？\"是我自学时经常想到的问题。现在已经自学了C、Java、Python、JavaScript四门编程语言，或许是对计算机方面的兴趣使我坚持了下来，但扪心自问，这些知识我真的学懂了吗？答案显然是否定的。学的时候不确定学了能有什么用，学完了也没学懂，归其原因，估计还是自己太浮躁、太功利。希望以后能静下心来真正学点有用的东西，也希望前路不要那么迷茫——夜空中最亮的星，请指引我前行...","2019年10月5日22:24:50");
-	
-	append("首次使用IDE（HBuilder X)写网页。前端视频看了一部分，其中关于图片大小的设置很有意思:设置图片宽高属性并不会减少内存占用，所以最好还是将图片编辑成合适大小再放到网页里去。似乎明白前端切图仔这个外号的由来了。","2019年10月5日22:31:19");
-	
-	//*********************在此范围内添加留言块*********************
-});
+function createEle(tagName) {
+    return document.createElement(tagName);
+}
+
+function createTextNode(text) {
+    return document.createTextNode(text);
+}
+
+function addBox(title, time, content, href) {
+    div_box = createEle('div');
+    div_title = createEle('div');
+    div_content = createEle('div');
+    div_more = createEle('div')
+
+    div_box.className = "box";
+    div_title.className = "title";
+    div_content.className = "content";
+    div_more.className = "more";
+
+    if(title == undefined){
+        title = "无标题";
+    }
+
+    if(time == undefined){
+        time = "时间未知";
+    }
+
+    if(content == undefined){
+        content = "文章简介正在施工...";
+    }
+
+    if(href == undefined){
+        href = "javascript:void(0);";
+    }
+
+    more = createEle('a');
+    more.href = href;
+    more.appendChild(createTextNode('查看详情'));
+
+    div_more.appendChild(more);
+
+    p_title = createEle('p');
+    p_title.appendChild(createTextNode(title));
+
+    s_time = createEle('span');
+    s_time.appendChild(createTextNode(time));
+    s_time.className = "time";
+
+    div_title.appendChild(p_title);
+    div_title.appendChild(s_time);
+
+    div_box.appendChild(div_title);
+
+    s_content = createEle('span');
+    s_content.appendChild(createTextNode(content));
+
+    div_content.appendChild(s_content);
+    div_box.appendChild(div_content);
+    div_box.appendChild(div_more);
+    div_wrapper.appendChild(div_box);
+}
+

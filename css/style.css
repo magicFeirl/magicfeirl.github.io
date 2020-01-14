@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 微软雅黑;
+    background-color: #f4f5f7;
+}
+
+a{
+    text-decoration: none;
+}
+
+#wrapper {
+    width: 700px;
+    height: 1000px;
+    margin: 0 auto;
+    word-break: break-all;
+}
+
+.box {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    box-shadow: 2px 1px 2px rgba(0,0,0,.5);
+    height: 230px;
+    padding: 10px;
+    background-color: white;
+    position: relative;
+}
+
+.title {
+    border-bottom: #ccc 1px solid;
+    padding-bottom:5px;
+    height: 35px;
+}
+
+.title > p{
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 14px;
+}
+
+.time {
+    color: #ddd;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.time:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.content > span {
+    padding: 5px;
+    display: block;
+    height: 150px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.more > a {
+    display: block;
+    height: 30px;
+    background-color: #eee;
+    color: #444;
+    width: 100px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 20px;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, .3);
+    text-decoration: none;
+}
+
+.more > a:hover {
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, .5);
+    color: #000;
+}
+
+#go_to_top {
+    padding: 5px;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    font-size: 12px;
+    color: #333;
+}
+
+#go_to_top:hover {
+    color:black;
+}
+#wrapper >h3{
+    text-align: right;
+}
+
+#wrapper >h3 >a {
+    color: #555;
+}
+
+#wrapper >h3 >a:hover {
+    color: #000;
+}
