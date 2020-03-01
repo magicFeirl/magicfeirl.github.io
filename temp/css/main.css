@@ -1,0 +1,58 @@
+#wrapper{
+	text-align: center;
+	margin: 0px 50px;
+}
+
+ul{
+	list-style: none;
+	padding-inline-start: 0;
+}
+
+#menu{
+	padding-inline-start: 0px;
+	height: 48px;
+	font-size: 30px;
+	width: 1239px;
+}
+
+#menu>li{
+	margin: 0 80px;
+	display: inline;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family: PingFangSC-Regular, Verdana, Arial, '微软雅黑','宋体';
+	background-color: #fdfcf8;
+}
+
+a{
+	color:black;
+	text-decoration: none;
+}
+
+a:hover{
+	color: gray;
+}
+
+#content,#content>li{
+	text-align: left;
+	font-size: 20px;
+	padding:5px;
+}
+
+.time{
+	text-align: right;
+	font-size: small;
+	color: gray;
+}
+
+li{
+	margin: 20px 0;
+}
+
+#body{
+	padding: 0 50px;
+	font-size: 30px;
+}
